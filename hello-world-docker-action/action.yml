@@ -12,7 +12,7 @@ inputs:
 # Define your outputs here.
 outputs:
   time:
-    description: The time we greeted you
+    description: The time we greeted you.
 
 runs:
   using: docker
