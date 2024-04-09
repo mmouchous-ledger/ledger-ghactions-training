@@ -18,4 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./hello-world-docker-action
+        with: 
+          who-to-greet: mememe
+      - uses: ./hello-world-docker-action
       - run: echo "hello"
