@@ -25,3 +25,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job triggered by ${{ github.event_name }}"
+      - uses: actions/checkout@v4
+        with: 
+          repository: '.'
