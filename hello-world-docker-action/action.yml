@@ -18,4 +18,4 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+    INPUT_WHO_TO_GREETSS: ${{ inputs.who-to-greet }}
