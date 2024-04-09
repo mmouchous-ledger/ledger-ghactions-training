@@ -9,7 +9,7 @@ on:
     branches:
       - main
     paths-ignore: 
-      - ./.github/**
+      - .github/**
   
   pull_request:
     branches:
@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job triggered by ${{ github.event_name }}"
+      - run: echo "Name of the branch ${{ github.ref }}"
       - uses: actions/checkout@v4
         with: 
           repository: 'mmouchous-ledger/ledger-ghactions-training'
