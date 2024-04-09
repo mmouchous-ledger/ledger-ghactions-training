@@ -14,7 +14,7 @@ on:
 
 jobs:
   do:
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./hello-world-docker-action
