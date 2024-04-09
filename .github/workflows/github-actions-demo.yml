@@ -1,23 +1,27 @@
-name: Demo
-run-name: Demo WF ${{ github.jobid }}
+name: GitHub Actions Demo
 
 defaults:
   run:
     shell: bash
 
-on: 
+on:
+  push:
+    branches:
+      - main
+    paths-ignore: 
+      - ./.github/**
+  
+  pull_request:
+    branches:
+      - main
+      
+  schedule:
+    - cron: "15 6 * * SUN"
+  
   workflow_dispatch:
-    inputs:
-      name:
-        type: choice
-        description: Who to greet
-        options: 
-        - monalisa
-        - cschleiden
-
+  
 jobs:
-  demo:
-    name: "Demo Job"
+  Build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello ${{ github.event.inputs.name }}"
+      - run: echo "Job triggered by ${{ github.event_name }}"
