@@ -20,7 +20,7 @@ jobs:
       - id: hellowith
         uses: ./hello-world-docker-action
         with: 
-          who-to-greet: mememe
+          who_to_greet: mememe
       - id: hellowithout
         uses: ./hello-world-docker-action
       - run: echo "hello was @ ${{ steps.hellowith.outputs.time }} and @ ${{ steps.hellowithout.outputs.time }}"
