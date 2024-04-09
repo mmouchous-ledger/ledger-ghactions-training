@@ -4,12 +4,14 @@ on:
   workflow_dispatch:
   push:
     branches:
-        - main
+      - main
+    paths: 
+      - hello-world-docker-action/action.yml
 
 jobs:
-    do:
-        runs-on: unbuntu-latest
-        steps:
-            - uses: actions/checkout@v4
-            - uses: ./hello-world-docker-actions
-            
+  do:
+    runs-on: unbuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./hello-world-docker-action
+      - run: echo "hello"
