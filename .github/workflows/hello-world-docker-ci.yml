@@ -17,8 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./hello-world-docker-action
+      - id: hellowith
+        uses: ./hello-world-docker-action
         with: 
           who-to-greet: mememe
-      - uses: ./hello-world-docker-action
-      - run: echo "hello"
+      - id: hellowithout
+        uses: ./hello-world-docker-action
+      - run: echo "hello was @ ${{ steps.hellowith.outputs.time }} and @ ${{ steps.hellowithout.outputs.time }}"
