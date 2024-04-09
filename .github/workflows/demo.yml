@@ -1,0 +1,15 @@
+name: Demo
+run-name: Demo WF ${{ github.jobid }}
+
+defaults:
+  run:
+    shell: bash
+
+on: [workflow_dispatch]
+
+jobs:
+  demo:
+    name: "Demo Job"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
