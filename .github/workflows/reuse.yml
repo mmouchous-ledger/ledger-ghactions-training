@@ -7,5 +7,5 @@ jobs:
   call-workflow:
     uses: ./.github/workflows/reusable.yml
     with:
-      who-to-greet: ${{ github.actor }}
+      who_to_greet: ${{ github.actor }}
       
