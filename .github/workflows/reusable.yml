@@ -8,6 +8,14 @@ on:
         type: string
         required: true
         default: World
+        
+  workflow_dispatch:
+    inputs: 
+      who_to_greet: 
+        description: 'People name'
+        type: string
+        required: true
+        default: World
 
 jobs:
   reusable-job:
