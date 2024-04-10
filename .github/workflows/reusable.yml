@@ -20,6 +20,14 @@ on:
 jobs:
   reusable-job:
     runs-on: ubuntu-latest
+    outputs:
+      current-time: ${{ steps.time.current_time }}
     steps:
-      - run: echo "Hello $INPUTS_WHO_TO_GREET"
+      - name: Greet people
+        run: echo "Hello $WHO_TO_GREET"
+        env:
+          WHO_TO_GREET: ${{ inputs.who_to_greet }}
+      - name: Set time
+        id: time
+        run: echo "current_time=$(date)" >> GITHUB_OUTPUT
     
