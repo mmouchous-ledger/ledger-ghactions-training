@@ -1,0 +1,11 @@
+name: Reuse other workflkow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      who-to-greet: ${{ github.actor }}
+      
